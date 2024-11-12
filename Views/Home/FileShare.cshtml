@@ -1,0 +1,53 @@
+@model List<string>  
+
+@{
+    ViewData["Title"] = "FileShare";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="form-body">
+        <div class="form-container">
+            <div class="title">@ViewData["Title"]</div>
+            <div class="content">
+                <form asp-action="UploadFile" asp-controller="FileShare" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Upload a file:</label>
+                        <input type="file" id="file" name="file" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Upload</button>
+                </form>
+
+                <h3 class="mt-4">Files in File Share</h3>
+                <ul class="list-group">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var fileName in Model)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @fileName
+                                <span>
+                                    <a asp-action="DownloadFile" asp-controller="FileShare" asp-route-fileName="@fileName" class="btn btn-sm btn-success">Download</a>
+                                    <a asp-action="DeleteFile" asp-controller="FileShare" asp-route-fileName="@fileName" class="btn btn-sm btn-danger">Delete</a>
+                                </span>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <p>No files found in the file share.</p>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="site.js"></script>
+</body>
+</html>

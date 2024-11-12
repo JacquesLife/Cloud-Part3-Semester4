@@ -1,0 +1,51 @@
+@model List<string>
+
+@{
+    ViewData["Title"] = "Multimedia Page";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="form-body">
+        <div class="form-container">
+            <div class="title">@ViewData["Title"]</div>
+            <div class="content">
+                <form asp-action="UploadFile" asp-controller="BlobStorage" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Upload a file:</label>
+                        <input type="file" id="file" name="file" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+
+                <h3>Files in Blob Storage</h3>
+                <ul>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var blob in Model)
+                        {
+                            <li>
+                                @blob
+                                <a asp-action="DownloadFile" asp-controller="BlobStorage" asp-route-fileName="@blob" class="btn btn-sm btn-success">Download</a> |
+                                <a asp-action="DeleteFile" asp-controller="BlobStorage" asp-route-fileName="@blob" class="btn btn-sm btn-danger">Delete</a>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <p>No files found.</p>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="site.js"></script>
+</body>
+</html>

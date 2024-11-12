@@ -1,0 +1,28 @@
+@import '_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css';
+
+/* _content/WebApplication1/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Navbar */
+a.navbar-brand[b-4ak7nacacg] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Links */
+a[b-4ak7nacacg] {
+  color: #0077cc;
+  text-decoration: none; 
+}
+
+a:hover[b-4ak7nacacg] {
+  color: #0056b3; 
+}
+
+/* Buttons */
+.btn-primary[b-4ak7nacacg] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+

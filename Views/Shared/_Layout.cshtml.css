@@ -1,0 +1,25 @@
+﻿/* Navbar */
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none; 
+}
+
+a:hover {
+  color: #0056b3; 
+}
+
+/* Buttons */
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+
