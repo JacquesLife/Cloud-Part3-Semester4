@@ -77,9 +77,3 @@ I created a database replica for my Azure SQL Database for the following reasons
 **Google Cloud Filestore** Google Cloud Filestore is an alternative to Azure File Share. It is used to store files which can be accessed from anywhere in the world by multiple authorized users. It is fully managed by Google and is highly scalable.
 
 
-Links for Part 3.
-
-Github: https://github.com/JacquesLife/WebApplication1/tree/master/WebApplication1
-
-Link to website: https://jacqueswebapp.azurewebsites.net/
-
